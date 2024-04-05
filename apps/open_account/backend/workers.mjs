@@ -72,7 +72,7 @@ workersApi.all('*', () => new Response(JSON.stringify(apiTemplate(403, 'Invalid 
 
 export default {
     fetch: (req, env, ...args) =>
-        workersApi.handle(req, env, ...args).catch((e) => {
+        workersApi.fetch(req, env, ...args).catch((e) => {
             Log(false, 'log', e)
             return new Response(JSON.stringify(apiTemplate(500, 'Unknown error', {}, 'open_account_list')), { status: 500 })
         })

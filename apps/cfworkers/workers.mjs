@@ -155,7 +155,7 @@ workersApi.all('*', () => new Response(JSON.stringify(apiTemplate(403, 'Invalid 
 export default {
     fetch: (req, env, ...args) =>
         workersApi
-            .handle(req, env, ...args)
+            .fetch(req, env, ...args)
             .then((res) => {
                 const WORKERS_ALLOW_ORIGIN = env.WORKERS_ALLOW_ORIGIN || []
                 if (WORKERS_ALLOW_ORIGIN) {
